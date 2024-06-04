@@ -9,7 +9,7 @@ class CartPage:
 
             browser.element(".header__search input").type(
                 "Искусственный интеллект с примерами на Python. Создание приложений искусственного интеллекта"
-            ).click()
+            ).press_enter()
             time.sleep(1)
             return self
     #
