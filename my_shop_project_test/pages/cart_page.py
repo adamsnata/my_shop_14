@@ -10,6 +10,7 @@ class CartPage:
             browser.element(".header__search input").type(
                 "Искусственный интеллект с примерами на Python. Создание приложений искусственного интеллекта"
             ).press_enter()
+            time.sleep(1)
             browser.element(".header__search input").with_(timeout=200).should(have.value(
                 "Искусственный интеллект с примерами на Python. Создание приложений искусственного интеллекта"
             ))
