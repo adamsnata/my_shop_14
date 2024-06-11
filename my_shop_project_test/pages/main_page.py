@@ -1,11 +1,12 @@
 import allure
 from selene import browser, have
 
-
+# todo ALLURE ПО ДРУГОМУ ПЕРЕПИСАТЬ
 class MainPage:
     with allure.step("Open marketplace"):
         def open_shop_page(self):
             browser.open('/')
+            browser.element('[href*="/my/partner"]').with_(timeout=60).should(have.text('Партнёрам'))
             return self
 
     with allure.step("Checking first level menu items"):
