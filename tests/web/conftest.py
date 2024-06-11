@@ -22,7 +22,8 @@ def load_env():
 
 @pytest.fixture(scope='function', autouse=True)
 def browser_management():
-    if config.settings.SELENOID:
+    Selenoid = os.getenv('SELENOID')
+    if Selenoid != "False":
         options = Options()
         selenoid_capabilities = {
             "browserName": "chrome",
@@ -59,7 +60,7 @@ def browser_management():
 
     yield
 
-    if config.settings.SELENOID:
+    if Selenoid != "False":
 
         attach.add_screenshot(browser)
         attach.add_logs(browser)

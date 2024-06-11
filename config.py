@@ -8,7 +8,7 @@ class Settings(pydantic.BaseModel):
 
     USER_EMAIL: str = os.environ.get('USER_EMAIL')
     PASSWORD: str = os.environ.get('USER_PASSWORD')
-    SELENOID: bool = False
+    # SELENOID: bool = False
 
 
 settings = Settings()
